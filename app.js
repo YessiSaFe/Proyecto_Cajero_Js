@@ -160,6 +160,7 @@ function mostrarMenuHTML(posicionUsuario) {
       document.getElementById("retiro").style.display = "inline-block";
       document.getElementById("regresar").style.display = "none";
       document.getElementById("info").style.display = "none";
+      document.getElementById("cambio").style.display = "none";
     });
 
   });
@@ -180,6 +181,10 @@ function mostrarMenuHTML(posicionUsuario) {
     document.getElementById("info").innerText =
       "Escribe la cantidad que deseas retirar:";
 
+    // Funcion para CONSULTAR SALDO
+      document.getElementById("cambio").innerText =
+      "El saldo actual es de: $" + cuentas[posicionUsuario].saldo;
+
     // Funcion para restar la cantidad ingresada en el input al saldo del usuario
       let cantidadRetiro = document.getElementById("ingreso");
       console.log(cantidadRetiro.value);
@@ -188,7 +193,6 @@ function mostrarMenuHTML(posicionUsuario) {
 
     //------------------BOTON REGRESAR
     document.getElementById("regresar").style.display = "inline-block";
-
 //----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de consultar y deposito   
     let botonregresar = document.getElementById("regresar");
     botonregresar.addEventListener("click", function () {
@@ -198,6 +202,7 @@ function mostrarMenuHTML(posicionUsuario) {
       document.getElementById("consultar").style.display = "inline-block";
       document.getElementById("regresar").style.display = "none";
       document.getElementById("info").style.display = "none";
+      document.getElementById("cambio").style.display = "none";
     });
 
   });
@@ -219,6 +224,11 @@ function mostrarMenuHTML(posicionUsuario) {
     document.getElementById("info").innerText =
       "Ingrese la cantidad que desea depositar";
 
+
+      // Funcion para CONSULTAR SALDO
+      document.getElementById("cambio").innerText =
+      "El saldo actual es de: $" + cuentas[posicionUsuario].saldo;
+
     //------------------BOTON REGRESAR
     document.getElementById("regresar").style.display = "inline-block";
      //----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de retiro y deposito (REVISAR)
@@ -230,6 +240,7 @@ function mostrarMenuHTML(posicionUsuario) {
        document.getElementById("retiro").style.display = "inline-block";
        document.getElementById("regresar").style.display = "none";
        document.getElementById("info").style.display = "none";
+       document.getElementById("cambio").style.display = "none";
      });
 
     // Funcion para sumar la cantidad depositada en el input al saldo del usuario
