@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.inicio {
+    background-color:cornflowerblue;
+    padding: 20px;
+    height: 100vh;
+    width: 100wh;
+}
+
+.acciones {
+    background-color: #9F81F7;
+    padding: 20px;
+    display: none;
+    height: 100vh;
+    width: 100wh;
+}
+
+.ingreso {
+    display: none;
+}
+
+.depositar {
+    display: none;
+}
+
+.regresar {
+    display: none;
+}

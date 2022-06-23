@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    
+  
+    <main class="inicio" id="inicio">
+        <h1>CAJERO ATM</h1>
+        <label for="usuario">Usuario</label>
+        <input type="text" name="usuario" id="usuario">
+        <label for="contrasenia">Contraseña</label>
+        <input type="text" name="contrasenia" id="contrasenia">
+        <button onclick="ingresar()">Ingresar</button>
+    </main>
+
+
+    <div class="acciones" id="acciones">
+        <h2>Bienvenid@ <span id="nombre-usuario"></span></h2>
+        
+        <p id="info">...</p>
+        <button id="consultar">Consultar saldo</button>
+
+        <!---  input para retirar saldo   ----->
+        <input type="text" class="ingreso" id="ingreso">
+        <button id="retiro">Hacer un retiro</button>
+        <!---  onclick="retirarSaldoHTML()  ----->
+        
+
+        <!--- input para realizar un deposito  ----->
+        <input type="text" class="depositar" id="depositar">
+        <button id="deposito">Hacer un depósito</button>
+        <!---  onclick="ingresarSaldoHTML()"  ----->
+
+        <!---  boton REGRESAR   ----->
+        <button type="button" id="regresar" class="regresar">Regresar</button>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
