@@ -10,7 +10,7 @@ let cuentas = [
   { nombre: "Carlos", saldo: 67, password: "123" },
 ];
 
-// login(); 
+// login();
 
 // Inicio del programa
 // function login() {
@@ -152,8 +152,7 @@ function mostrarMenuHTML(posicionUsuario) {
 
     //------------------BOTON REGRESAR
     document.getElementById("regresar").style.display = "inline-block";
-
-  //----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de retiro y deposito (REVISAR)
+    //----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de retiro y deposito (REVISAR)
     let botonregresar = document.getElementById("regresar");
     botonregresar.addEventListener("click", function () {
       document.getElementById("deposito").style.display = "inline-block";
@@ -162,7 +161,6 @@ function mostrarMenuHTML(posicionUsuario) {
       document.getElementById("info").style.display = "none";
       document.getElementById("cambio").style.display = "none";
     });
-
   });
 
   // Contruir el resto de funciones para los botones
@@ -181,19 +179,28 @@ function mostrarMenuHTML(posicionUsuario) {
     document.getElementById("info").innerText =
       "Escribe la cantidad que deseas retirar:";
 
+    // Funcion para restar la cantidad ingresada en el input al saldo del usuario
+    let cantidadRetiro = document.getElementById("ingreso");
+    //console.log(cantidadRetiro.value);
+    cuentas[posicionUsuario].saldo =
+      cuentas[posicionUsuario].saldo - Number(cantidadRetiro.value);
+    console.log(cantidadRetiro, "cantidadRetiro");
+    console.log(cuentas[posicionUsuario]);
+
     // Funcion para CONSULTAR SALDO
-      document.getElementById("cambio").innerText =
+    document.getElementById("cambio").innerText =
       "El saldo actual es de: $" + cuentas[posicionUsuario].saldo;
 
-    // Funcion para restar la cantidad ingresada en el input al saldo del usuario
-      let cantidadRetiro = document.getElementById("ingreso");
-      console.log(cantidadRetiro.value);
-      cuentas[posicionUsuario].saldo =
-        cuentas[posicionUsuario].saldo - Number(cantidadRetiro.value);
+    //------------PRUEBA DE IDEA
+      //--------Primero hacer la suma y después la funcion para mostrar el saldo
+    let botonRetiro = document.getElementById("retiro");
+    botonRetiro.addEventListener("click", function () {
+      document.getElementById("cambio").style.display = "inline-block";
+    });
 
     //------------------BOTON REGRESAR
     document.getElementById("regresar").style.display = "inline-block";
-//----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de consultar y deposito   
+    //----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de consultar y deposito
     let botonregresar = document.getElementById("regresar");
     botonregresar.addEventListener("click", function () {
       document.getElementById("deposito").style.display = "inline-block";
@@ -204,7 +211,6 @@ function mostrarMenuHTML(posicionUsuario) {
       document.getElementById("info").style.display = "none";
       document.getElementById("cambio").style.display = "none";
     });
-
   });
 
   //--------------------------------------------------------------------------------------------------------------
@@ -224,34 +230,30 @@ function mostrarMenuHTML(posicionUsuario) {
     document.getElementById("info").innerText =
       "Ingrese la cantidad que desea depositar";
 
-
-      // Funcion para CONSULTAR SALDO
-      document.getElementById("cambio").innerText =
+    // Funcion para CONSULTAR SALDO
+    document.getElementById("cambio").innerText =
       "El saldo actual es de: $" + cuentas[posicionUsuario].saldo;
 
     //------------------BOTON REGRESAR
     document.getElementById("regresar").style.display = "inline-block";
-     //----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de retiro y deposito (REVISAR)
-     let botonregresar = document.getElementById("regresar");
-     botonregresar.addEventListener("click", function () {
+    //----Agregando funcionalidad al boton regresar; se muestran de nuevo los botones de retiro y deposito (REVISAR)
+    let botonregresar = document.getElementById("regresar");
+    botonregresar.addEventListener("click", function () {
       document.getElementById("depositar").style.display = "none";
       document.getElementById("consultar").style.display = "inline-block";
-       document.getElementById("deposito").style.display = "inline-block";
-       document.getElementById("retiro").style.display = "inline-block";
-       document.getElementById("regresar").style.display = "none";
-       document.getElementById("info").style.display = "none";
-       document.getElementById("cambio").style.display = "none";
-     });
+      document.getElementById("deposito").style.display = "inline-block";
+      document.getElementById("retiro").style.display = "inline-block";
+      document.getElementById("regresar").style.display = "none";
+      document.getElementById("info").style.display = "none";
+      document.getElementById("cambio").style.display = "none";
+    });
 
     // Funcion para sumar la cantidad depositada en el input al saldo del usuario
     let cantidadDepositada = document.getElementById("depositar");
-    console.log(cantidadDepositada.value);
+    //console.log(cantidadDepositada.value);
     cuentas[posicionUsuario].saldo =
       cuentas[posicionUsuario].saldo + Number(cantidadDepositada.value);
-
   });
-
-
 }
 
 //-------------------Codigo que no se usa, fue sustituido por otras funciones---------------------------------
