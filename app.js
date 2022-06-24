@@ -175,6 +175,8 @@ function mostrarMenuHTML(posicionUsuario) {
     document.getElementById("consultar").style.display = "none";
     document.getElementById("deposito").style.display = "none";
 
+
+    document.getElementById("info").style.display = "block";
     //cambiando texto a Escribe la cantidad que deseas retirar
     document.getElementById("info").innerText =
       "Escribe la cantidad que deseas retirar:";
@@ -190,12 +192,14 @@ function mostrarMenuHTML(posicionUsuario) {
     // Funcion para CONSULTAR SALDO
     document.getElementById("cambio").innerText =
       "El saldo actual es de: $" + cuentas[posicionUsuario].saldo;
+      document.getElementById("info").style.display = "block";
+
 
     //------------PRUEBA DE IDEA
-      //--------Primero hacer la suma y después la funcion para mostrar el saldo
+      //--------Primero hacer la suma y después la funcion para mostrar el saldo para evitar errores
     let botonRetiro = document.getElementById("retiro");
     botonRetiro.addEventListener("click", function () {
-      document.getElementById("cambio").style.display = "inline-block";
+      document.getElementById("cambio").style.display = "block";
     });
 
     //------------------BOTON REGRESAR
@@ -227,6 +231,10 @@ function mostrarMenuHTML(posicionUsuario) {
 
     document.getElementById("retiro").style.display = "none";
 
+    document.getElementById("info").style.display = "block";
+
+    document.getElementById("cambio").style.display = "block";
+
     document.getElementById("info").innerText =
       "Ingrese la cantidad que desea depositar";
 
@@ -253,7 +261,22 @@ function mostrarMenuHTML(posicionUsuario) {
     //console.log(cantidadDepositada.value);
     cuentas[posicionUsuario].saldo =
       cuentas[posicionUsuario].saldo + Number(cantidadDepositada.value);
+      console.log(cantidadDepositada, "cantidadDepositada");
+      console.log(cuentas[posicionUsuario]);
+      
+       // Funcion para CONSULTAR SALDO
+       document.getElementById("cambio").innerText =
+       "El saldo actual es de: $" + cuentas[posicionUsuario].saldo;
+ 
+     //------------PRUEBA DE IDEA
+       //--------Primero hacer la suma y después la funcion para mostrar el saldo para evitar errores
+     let botonDeposito = document.getElementById("deposito");
+     botonDeposito.addEventListener("click", function () {
+       document.getElementById("cambio").style.display = "inline-block";
+     });
+
   });
+
 }
 
 //-------------------Codigo que no se usa, fue sustituido por otras funciones---------------------------------
